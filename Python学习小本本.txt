@@ -1,0 +1,24 @@
+1. raw_input（）
+
+2. # -*- coding: utf-8 -*- （还是有问题）
+
+3. 入门指南P23
+	在迭代过程中修改迭代序列不安全（只有在使用链表这样的可变序列时才会有这样的情况）。如果你想要修改你迭代的序列（例如，复制选择项），你可以迭代它的复本。使用切割标识就可以很方便的做到这一点
+	>>> for x in a[:]: # make a slice copy of the entire list
+	... if len(x) > 6: a.insert(0, x)
+
+4.else
+	else 可以在for，while的时候使用
+
+5.xrange和range是不同的
+
+6.global
+
+7.核心类型 Python学习手册P114
+	数字
+	字符串
+	列表
+	字典
+	元组
+	文件
+	其他类型

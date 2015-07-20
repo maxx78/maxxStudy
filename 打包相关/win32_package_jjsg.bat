@@ -1,0 +1,1 @@
+start python win32_package_jjsg.py
