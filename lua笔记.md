@@ -88,3 +88,32 @@ do
 end
 如果我们的迭代函数是f，状态常量是s，控制变量的初始值是a0，那么控制变量将循环：a1=f(s,a0)、a2=f(s,a1)、⋯⋯，直到ai=nil。
 ```
+
+## require
+
+`http://blog.csdn.net/aisajiajiao/article/details/19332397`
+
+* 机制
+```
+--require 函数的实现  
+function require(name)  
+    if not package.loaded[name] then  
+        local loader = findloader(name) //这一步演示在代码中以抽象函数findloader来表示  
+        if loader == nil then  
+            error("unable to load module" .. name)  
+        end  
+        package.loaded[name] = true  
+        local res = loader(name)  
+        if res ~= nil then  
+            package.loaded[name] = res  
+        end  
+    end  
+    return package.loaded[name]  
+end 
+```
+
+* 指定路径
+```
+package.path = XXX
+替换“?”号
+```
