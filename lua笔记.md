@@ -117,3 +117,12 @@ end
 package.path = XXX
 替换“?”号
 ```
+
+## 协程
+* 状态  
+挂起态（suspended） 运行态 停止态（dead）
+
+* 参数传递  
+resume会把参数给协程函数  
+yield也会把参数给resume函数
+
