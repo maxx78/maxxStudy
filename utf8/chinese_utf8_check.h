@@ -249,7 +249,9 @@ private:
             { 0x1F680, 0x1F6C0 },
             { 0x1F600, 0x1F636 },
             { 0x1F681, 0x1F6C5 },
-            { 0x1F30D, 0x1F567 }
+            { 0x1F30D, 0x1F567 },
+            //▁▂▃▄▅▆▇█▉▊
+            { 0x2581, 0x258A}
         };
 
         stIllegalCharSet.clear();
