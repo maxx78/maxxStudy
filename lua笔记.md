@@ -1,4 +1,18 @@
-## 系统时间
+# lua学习笔记 
+
+`by maxx`
+
+* [系统时间](#systemTime)
+* [闭包](#closure)
+* [字符串](#string)
+* [取table长度](#tableLength)
+* [尾调用](#LuaTailCall)
+* [泛型for](#LuaFor)
+* [require](#LuaRequire)
+* [协程](#LuaCroutine)
+
+<h2 id="systemTime">**系统时间**</h2>
+
 ```
 local iNowTime = os.date("*t")
 local iLeftDay = 8 - iNowTime.wday
@@ -16,10 +30,12 @@ if iLeftHour < 0 then
     iLeftDay = iLeftDay - 1
 end
 ```
-## 闭包
+<h2 id="closure">**闭包**</h2>
+
 lua内部的函数体可以访问外部的局部变量，在函数内部我们将称之为外部的局部变量upvalue
 
-## 字符串
+<h2 id="string">**字符串**</h2>
+
 `string.find(Moban, sonStr)`
 ```
 string.find(Moban, sonStr) --> s, e
@@ -43,7 +59,9 @@ string.find(Moban, sonStr) --> s, e
 	return list[i], list[i+1], ... , list[j]
 	注意不是返回组合字符串，而是返回多个结果值！
 ```
-## 取table长度
+
+<h2 id="tableLength">**取table长度**</h2>
+
 `#table`
 ```
 table t 的长度被定义成一个整数下标 n 。它满足 t[n] 不是 nil 而 t[n+1] 为 nil；此外，如果 t[1] 为 nil ，n 就可能是零。
@@ -57,11 +75,12 @@ table t 的长度被定义成一个整数下标 n 。它满足 t[n] 不是 nil �
 然而我并不知道这个是什么^_^
 但是对于数组而言，getn就是取数组大小
 ```
+<h2 id="LuaTailCall">**尾调用**</h2>
 
-## 尾调用
 个人感觉就是不调用，和闭包的特性一起用，很神奇
 
-## 泛型for
+<h2 id="LuaFor">**泛型for**</h2>
+
 ```
 for <var-list> in <exp-list> do
 	<body>
@@ -89,7 +108,7 @@ end
 如果我们的迭代函数是f，状态常量是s，控制变量的初始值是a0，那么控制变量将循环：a1=f(s,a0)、a2=f(s,a1)、⋯⋯，直到ai=nil。
 ```
 
-## require
+<h2 id="LuaRequire">**require**</h2>
 
 `http://blog.csdn.net/aisajiajiao/article/details/19332397`
 
@@ -118,7 +137,8 @@ package.path = XXX
 替换“?”号
 ```
 
-## 协程
+<h2 id="LuaCroutine">**协程**</h2>
+
 * 状态  
 挂起态（suspended） 运行态 停止态（dead）
 
