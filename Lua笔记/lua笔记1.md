@@ -1,11 +1,15 @@
 # lua学习笔记 
 
-`by maxx`
+`write by maxx`
 
 * [系统时间](#systemTime)
 * [闭包](#closure)
 * [字符串](#string)
-* [取table长度](#tableLength)
+* [table的一些操作](#LuaTable)
+	* [取长度](#tableLength)
+	* [插入和删除](#tableOP)
+	* [排序](#tableSort)
+	* [连接](#tableConcat)
 * [尾调用](#LuaTailCall)
 * [泛型for](#LuaFor)
 * [require](#LuaRequire)
@@ -60,7 +64,9 @@ string.find(Moban, sonStr) --> s, e
 	注意不是返回组合字符串，而是返回多个结果值！
 ```
 
-<h2 id="tableLength">**取table长度**</h2>
+<h2 id="LuaTable">**table的一些操作**</h2>
+
+<h3 id="tableLength">**取table长度**</h3>
 
 `#table`
 ```
@@ -75,6 +81,37 @@ table t 的长度被定义成一个整数下标 n 。它满足 t[n] 不是 nil �
 然而我并不知道这个是什么^_^
 但是对于数组而言，getn就是取数组大小
 ```
+<h3 id="tableOP">**table的插入和删除**</h3>
+
+* 插入
+```
+table.insert(table, pos, value)
+table.insert(table, value) --队尾
+```
+
+* 删除
+```
+table.remove(table, pos)
+pos为空的时候，则默认队尾
+<font color="red">返回删除元素值</font>
+```
+
+<font color="red">返回删除元素值</font>
+
+<h3 id="tableSort">**table排序**</h3>
+```
+table.sort(table, cmp)
+```
+
+<h3 id="tableConcat">**连接**</h3>
+```
+table.concat(bable, sep, start, end)
+sep:隔开符号
+start:默认1
+end：默认总长
+```
+
+
 <h2 id="LuaTailCall">**尾调用**</h2>
 
 个人感觉就是不调用，和闭包的特性一起用，很神奇
