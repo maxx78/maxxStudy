@@ -1,2 +1,11 @@
 # maxxStudy
-Use as learning
+
+
+* 仅仅是测试
+
+```
+int main()
+{
+	return 0;
+}
+```
